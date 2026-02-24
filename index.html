@@ -16,6 +16,8 @@
   <style>
     :root {
       --black: #3e4953;
+      --blue: #23292f;
+      --grad: linear-gradient(90deg,rgb(35, 41, 47) 0%, rgba(62, 73, 83, 1) 30%);
       --white: #f5f2ec;
       --green: #b8e04a;
       --green-dark: #3e5c5c;
@@ -130,7 +132,7 @@
       grid-template-columns: 1fr 1fr;
       position: relative;
       overflow: hidden;
-      background-color: var(--black);
+      background: var(--grad);
     }
 
     .hero-left {
@@ -155,7 +157,7 @@
     .hero-headline {
       font-family: 'Bebas Neue', sans-serif;
       font-size: clamp(6rem, 12vw, 11rem);
-      line-height: 0.9;
+      line-height: 0.79;
       color: var(--white);
       opacity: 0;
       animation: fadeUp 0.8s 0.4s forwards;
@@ -795,7 +797,10 @@
       nav {
         flex-wrap: wrap;
         padding: 1.2rem 1.5rem;
-      }
+        background-color: rgba(0, 0, 0, 0.8);
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        backdrop-filter: blur(10px);
+    }
 
        .menu-toggle {
         display: flex;
@@ -825,7 +830,11 @@
       padding: 0; 
     }
 
-      .hero { grid-template-columns: 1fr; }
+      .hero { 
+        grid-template-columns: 1fr; 
+        border-radius: 50px 50px 0 0;
+      }
+
       .hero-left { padding: 5rem 0 0; }
 
       .hero-right {
