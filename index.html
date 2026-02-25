@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <meta property="og:title" content="Play Padel Winchester" />
   <meta property="og:description" content="A luxury indoor facility with 3 padel and 3 pickle courts" />
-  <meta property="og:image:secure_url" itemprop="image" content="https://playpadelclub.vercel.app/images/og.jpg" />
+  <meta property="og:image:secure_url" itemprop="image" type="image/png" content="https://playpadelclub.vercel.app/images/og.jpg" />
   <meta property="og:url" content="https://playpadelclub.vercel.app" />
   <meta property="og:type" content="website" />
   <link rel="icon" href="/images/favicon.png" type="image/png">
@@ -1123,6 +1123,14 @@ window.addEventListener("scroll", () => {
     navLinks.classList.toggle('active');
     navvbar.classList.toggle('nav-active');
     toggleBtn.classList.toggle('rotate');
+  });
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('active');
+      navbar.classList.remove('nav-active');
+      toggleBtn.classList.remove('rotate');
+    });
   });
 </script>
 
