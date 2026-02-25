@@ -9,7 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
   <meta property="og:title" content="Play Padel Winchester" />
   <meta property="og:description" content="A luxury indoor facility with 3 padel and 3 pickle courts" />
-  <meta property="og:image" content="https://playpadelclub.vercel.app/images/og.jpg" />
+  <meta property="og:image:secure_url" itemprop="image" content="https://playpadelclub.vercel.app/images/og.jpg" />
   <meta property="og:url" content="https://playpadelclub.vercel.app" />
   <meta property="og:type" content="website" />
   <link rel="icon" href="/images/favicon.png" type="image/png">
@@ -162,6 +162,7 @@
       opacity: 0;
       animation: fadeUp 0.8s 0.4s forwards;
       font-weight: 500;
+      margin-left: -5px;
     }
 
     .hero-headline span { color: var(--green); }
@@ -459,7 +460,7 @@
     }
 
     .plan {
-      border: 1px solid rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.3);
       border-radius: 4px;
       padding: 2.5rem;
       transition: all 0.25s;
@@ -1116,6 +1117,7 @@ window.addEventListener("scroll", () => {
   const toggleBtn = document.getElementById('menu-toggle');
   const navLinks = document.getElementById('nav-links');
   const navvbar = document.getElementById('navbar');
+  const links = document.querySelectorAll('.nav-links a');
 
   toggleBtn.addEventListener('click', () => {
     navLinks.classList.toggle('active');
