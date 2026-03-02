@@ -9,6 +9,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Anton+SC&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
   <meta property="og:title" content="Play Padel Winchester" />
   <meta property="og:description" content="A luxury indoor facility with 3 padel and 3 pickle courts" />
   <meta property="og:image" content="https://playpadelclub.vercel.app/images/og.jpg" />
@@ -18,17 +20,21 @@
   <meta property="og:url" content="https://playpadelclub.vercel.app" />
   <meta property="og:type" content="website" />
   <link rel="icon" href="/images/favicon.png" type="image/png">
+  <link rel="stylesheet" href="new-title.css">
   <style>
     :root {
       /*--black: #3e4953;*/
-      --black:  #384255;
-      --blue: #23292f;
+      --black:  #2f3339;
+      --blue: #2f3339;
       --grad: linear-gradient(to right, rgba(55, 65, 84, 1) 18.49%, rgb(99, 108, 124) 32.35%, rgba(210, 223, 233, 1) 55.46%);
       --white: #f5f2ec;
-      --green: #b8e04a;
-      --green-dark: #3e5c5c;
+      --green: #ddffa2; 
+      --green-dark: #2c3c37; 
       --mid: #e9e9e9;
       --muted: #c3c3c3;
+      --green-old:#3e5c5c;
+      --blue-old: #384255;
+      --heading:  "Fugaz One", sans-serif;
     }
 
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -36,7 +42,7 @@
     html { scroll-behavior: smooth; }
 
     body {
-      background: black;
+      background: #222;
       color: var(--white);
       font-family: 'DM Sans', sans-serif;
       font-weight: 300;
@@ -101,12 +107,11 @@
     }
 
     .nav-links a {
-      color: black;
+      color: white;
       text-decoration: none;
       font-size: 0.78rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
-      opacity: 0.7;
       transition: opacity 0.2s, color 0.2s;
       font-weight: 500;
     }
@@ -126,28 +131,29 @@
     #nav-cta {
       color:var(--green); 
       opacity:1; 
-      background-color:#3e5c5c; 
+      background-color: var(--green-dark); 
       padding: 12px 25px; 
       border-radius:3px;
     }
 
     /* ── HERO ── */
     .hero {
-      min-height: 100vh;
+      height: 100vh;
       display: grid;
       grid-template-columns: 1fr 1fr;
       position: relative;
       overflow: hidden;
-      background: var(--grad);
+      background: color(srgb 0.0765 0.18 0.1615);
     }
 
     .hero-left {
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 7rem 2rem 5rem;
+      padding: 0rem 2rem 0rem;
       position: relative;
       z-index: 2;
+      padding-bottom: 1rem;
     }
 
     .hero-tag {
@@ -161,8 +167,8 @@
     }
 
     .hero-headline {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(6rem, 12vw, 11rem);
+      font-family: var(--heading);
+      font-size: clamp(8rem, 9vw, 9rem);
       line-height: 0.79;
       color: var(--white);
       opacity: 0;
@@ -170,6 +176,8 @@
       font-weight: 400;
       margin-left: -5px;
       font-style: normal;
+      text-transform: uppercase;
+      letter-spacing: -4px;
     }
 
     .hero-headline span { color: var(--green); }
@@ -180,7 +188,7 @@
       line-height: 1.7;
       color: var(--white);
       opacity: 0;
-      max-width: 38ch;
+      max-width: 45ch;
       animation: fadeUp 0.8s 0.6s forwards;
     }
 
@@ -212,7 +220,10 @@
       font-weight: 500;
     }
 
-    .btn-primary:hover { background: var(--green-dark); transform: translateY(-2px); }
+    .btn-primary:hover { 
+      background: #222; 
+      color: var(--green);
+    }
 
     .btn-outline {
       background: transparent;
@@ -225,13 +236,13 @@
     .hero-right {
       position: absolute;
       overflow: hidden;
-      background-image: url('images/boy-5.png');
+      background-image: url('images/hero.jpg');
       background-size: cover;
       top: 0;
       right: 0;
       height: 100%;
-      width: 57%;
-      background-position-y: 4%;
+      width: 55%;
+      background-position-x: 36%;
     }
 
     .overlay {
@@ -333,24 +344,25 @@
 
     /* ── STATS BAR ── */
     .stats {
-      background: var(--green-dark);
+      background: #222;
       padding: 2rem 3rem;
-      display: flex;
+      /*display: flex;
       justify-content: space-around;
       gap: 2rem;
-      flex-wrap: wrap;
+      flex-wrap: wrap;*/
     }
 
     .stat {
       text-align: center;
     }
 
-    .stat-num {
-      font-family: 'Bebas Neue', sans-serif;
+    .stat-num, .marquee__content li {
+      font-family: var(--heading);
       font-size: 3rem;
-      color: white;
-      letter-spacing: 0.05em;
+      color: var(--green);
       line-height: 1;
+      white-space: nowrap;
+      text-transform: uppercase;
     }
 
     .stat-label {
@@ -362,9 +374,35 @@
       margin-top: 0.3rem;
     }
 
+    .marquee {
+      --gap: 4vw;
+      display: flex;
+      overflow: hidden;
+      user-select: none;
+      gap: var(--gap);
+    }
+
+  .marquee__content {
+      flex-shrink: 0;
+      display: flex;
+      justify-content: space-around;
+      gap: var(--gap);
+      animation: scroll 10s linear infinite;
+      list-style-type: none;
+    }
+
+    @keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - var(--gap)));
+  }
+}
+
     /* ── SECTIONS ── */
     section {
-      padding: 6rem 6vw;
+      padding: 4rem 6vw;
     }
 
     .section-label {
@@ -376,11 +414,12 @@
     }
 
     .section-title {
-      font-family: 'Bebas Neue', sans-serif;
-      font-size: clamp(3rem, 6vw, 5.5rem);
-      line-height: 0.9;
-      letter-spacing: 0.02em;
+      font-family: var(--heading);
+      font-size: clamp(5rem, 6vw, 5.5rem);
+      line-height: 0.8;
       font-weight: 500;
+      text-transform: uppercase;
+      letter-spacing: -4px;
     }
 
     /* ── COURTS ── */
@@ -388,14 +427,14 @@
       background: var(--mid);
     }
 
-    .courts .section-label, .courts h2 {
-      color: var(--black);
+    .courts .section-label, .courts h2, .location .section-label {
+      color: var(--blue);
     }
 
     .courts-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
+      gap: 1rem;
       margin-top: 3.5rem;
     }
 
@@ -403,17 +442,19 @@
       background: var(--black);
       border: 1px solid rgba(255,255,255,0.08);
       padding: 2rem;
-      border-radius: 4px;
+      border-radius: 10px;
       transition: border-color 0.25s, transform 0.25s;
       position: relative;
       overflow: hidden;
+      display: flex;
+      flex-direction: column;
     }
 
     .court-card::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0;
-      height: 3px;
+      height: 10px;
       background: var(--green);
       transform: scaleX(0);
       transform-origin: left;
@@ -437,15 +478,27 @@
     }
 
     .court-desc {
-      font-size: 0.85rem;
+      font-size: 1rem;
       color: var(--muted);
-      margin-top: 0.75rem;
+      margin: 1.2rem 0;
+      line-height: 1.6;
+    }
+
+    .body {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .court-desc-top {
+      font-size: 1rem;
+      color: var(--blue);
       line-height: 1.6;
     }
 
     .court-badge {
       display: inline-block;
-      margin-top: 1.2rem;
+      margin-top: auto;
       padding: 0.3rem 0.8rem;
       background: rgba(184,224,74,0.12);
       color: var(--green);
@@ -467,9 +520,20 @@
       margin-top: 3.5rem;
     }
 
+    .member-about {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    .member {
+      grid-column-start: 3;
+      margin: 0;
+    }
+
     .plan {
       border: 1px solid rgba(255,255,255,0.3);
-      border-radius: 4px;
+      border-radius: 10px;
       padding: 2.5rem;
       transition: all 0.25s;
       position: relative;
@@ -488,7 +552,14 @@
       /*transform: scale(1.03);*/
     }
 
-    .plan:hover:not(.featured) { border-color: rgba(184,224,74,0.4); }
+    .plan:hover:not(.featured) { 
+      border-color: rgba(184,224,74,0.4); 
+      transform: translateY(-4px);
+    }
+
+    .plan.featured:hover {
+      transform: translateY(-4px);
+    }
 
     .plan-name {
       font-size: 0.72rem;
@@ -561,7 +632,9 @@
       color: var(--green);
     }
 
-    .plan.featured .plan-cta:hover { opacity: 0.85; }
+    .plan.featured .plan-cta:hover { 
+      background: black;
+    }
 
     /* ── ABOUT ── */
     .about {
@@ -572,13 +645,21 @@
       align-items: center;
     }
 
+    #apparel {
+      background: var(--green-dark);
+    }
+
+    #apparel .about {
+      gap: 0;
+      margin-bottom: -4rem;
+      border-radius: 10px 10px 0 0;
+      overflow: hidden;
+    }
+
     .about-content { }
 
     .about-text {
       margin-top: 2rem;
-      font-size: 1rem;
-      line-height: 1.8;
-      color: rgba(245,242,236,0.75);
     }
 
     .about-text + .about-text { margin-top: 1rem; }
@@ -590,8 +671,7 @@
 
     .about-box {
       position: absolute;
-      border: 1px solid rgba(184,224,74,0.3);
-      border-radius: 4px;
+      border-radius: 10px;
     }
 
     .about-box-1 {
@@ -600,7 +680,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-image: url('images/about.jpg');
+      background-image: url('images/about-4.jpeg');
       background-size: cover;
       background-position: center;
     }
@@ -639,28 +719,91 @@
       opacity: 0.7;
     }
 
+    .apparel-box-1 {
+      background-image: url(images/app-1.jpg);
+      background-size: cover;
+      height: 75vh;
+      background-position-y: 95%;
+    }
+
+     .apparel-box-2 {
+      background-image: url(images/cap.jpg);
+      background-size: cover;
+      height: 75vh;
+      background-position: center;
+    }
+
+    .apparel-text {
+      display: grid; 
+      grid-template-columns: 1fr 1fr; 
+      gap:5rem;
+    }
+
+    /* -- INVESTORS -- */
+    .investor-contact {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+    }
+
+    #investors form {
+      margin: 0;
+      justify-content: space-between;
+      height: 100%;
+    }
+
+    #investors .contact-form input, #investors input::placeholder, #investors textarea::placeholder, #investors textarea {
+      color: var(--muted);
+    }
+
+    .investor-label {
+      display: flex;
+      align-content: center;
+      gap: 10px;
+      margin-top: 2rem;
+      margin-bottom: 0;
+    }
+
+    .arrow {
+      width: 20px;
+      height: 12px;
+      position: relative;
+    }
+
+    .arrow svg {
+      position: absolute;
+      top: -4px;
+    }
+
     /* ── LOCATION ── */
     .location {
-      background: var(--black);
-      text-align: center;
+      background: var(--mid);
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 5rem;
+      color: var(--blue);
+    }
+
+    .location .box {
+      background-color: var(--green);
     }
 
     .location-address {
       margin-top: 2rem;
       font-size: 1.1rem;
-      color: rgba(245,242,236,0.65);
+      color: var(--blue);
       line-height: 1.5;
+      column-count: 2;
+      text-align: left;
     }
 
     .location-map {
-      margin: 3rem auto 0;
-      max-width: 700px;
+      margin: 0;
+      width: 100%;
       height: 400px;
-      border: 1px solid rgba(184,224,74,0.2);
-      border-radius: 4px;
+      border-radius: 10px;
       overflow: hidden;
       position: relative;
-      background: #111;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -698,13 +841,22 @@
       background: var(--mid);
       color: var(--black);
       text-align: center;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      overflow: hidden;
     }
 
-    .contact .section-label { color: rgba(0,0,0,0.5); }
-    .contact .section-title { color: var(--black); }
+    .contact-image {
+      background-image: url('images/balls.jpeg');
+      background-size: cover;
+    }
+
+    .contact .section-label { color: rgba(0,0,0,0.5); text-align: left;}
+    .contact .section-title { color: var(--black); text-align: left;}
 
     .contact-form {
-      max-width: 560px;
+      width: 100%;
       margin: 3rem auto 0;
       display: flex;
       flex-direction: column;
@@ -731,7 +883,7 @@
     .contact-form input:focus,
     .contact-form textarea:focus { border-color: var(--black); }
 
-    .contact-form textarea { min-height: 140px; resize: vertical; }
+    .contact-form textarea { min-height: 140px; resize: none; }
 
     .contact-form .btn {
       align-self: center;
@@ -743,9 +895,18 @@
 
     .contact-form .btn:hover { background: #222; }
 
+    .box {
+      padding: 2.5rem;
+      border-radius: 10px;
+    }
+
+    .register.box {
+      border: 1px solid var(--blue);
+    }
+
     /* ── FOOTER ── */
     footer {
-      background: black;
+      background: #222;
       border-top: 1px solid rgba(255,255,255,0.06);
       padding: 2.5rem 3rem;
       display: grid;
@@ -842,14 +1003,13 @@
       .hero { 
         grid-template-columns: 1fr; 
         border-radius: 50px 50px 0 0;
-        background: #384355;
       }
 
       .hero-left { padding: 5rem 0 0; }
 
       .hero-right {
-        width: 58%;
-        opacity: 0.3;
+        width: 100%;
+        opacity: 0.9;
       }
 
       .hero-cta {
@@ -868,6 +1028,38 @@
         padding: 1.5rem;
         display: grid;
         grid-template-columns: 1fr 1fr;   
+      }
+
+      .marquee__content li {
+        font-size: 2rem;
+      }
+
+      .court-desc-top, .member {
+        display: none;
+      }
+
+      .apparel-text {
+        grid-template-columns: 1fr;
+      } 
+
+      .apparel-text .body {
+        display: none;
+      }
+
+      .plans-grid, .investor-contact, .contact {
+        grid-template-columns: 1fr;
+      }
+
+      .contact, .location {
+        gap: 1.5rem;
+      }
+
+      .investor-contact {
+        gap: 3rem;
+      }
+
+      .arrow svg {
+        transform: rotate(90deg);
       }
 
       footer { 
@@ -899,7 +1091,7 @@
 <!-- NAV -->
 <nav id="navbar">
   <div class="nav-logo">
-    <img width="70" src="images/play-logo.png" />
+    <img width="70" src="images/play-logo-g.png" />
   </div>
   <div class="menu-toggle" id="menu-toggle">
     <img src="images/menu-icon.png" width="20" />
@@ -907,9 +1099,9 @@
   <ul class="nav-links" id="nav-links">
     <li><a href="#courts">Courts</a></li>
     <li><a href="#membership">Membership</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a id="nav-cta" href="#contact">Book Now</a></li>
+    <li><a href="#about">Why Play?</a></li>
+    <li><a href="#contact">Investors</a></li>
+    <li><a id="nav-cta" href="#contact">Contact Us</a></li>
   </ul>
 </nav>
 
@@ -918,8 +1110,8 @@
   <!--<div class="hero-bg-text">PLAY</div>-->
   <div class="hero-left">
     <p class="hero-tag">Winchester's Premier Padel Club</p>
-    <h1 class="hero-headline">Meet<br>Compete<br><span>Play.</span></h1>
-    <p class="hero-sub">Winchester's finest padel experience. World-class indoor courts, competitions for every level — beginner to elite, a fine dining café, padel and pickle coaching.</p>
+    <h1 class="hero-headline">Match<br>Meet<br><span>Play.</span></h1>
+    <p class="hero-sub">Winchester's finest padel experience. Elite level indoor courts, competitions for every level — beginner to elite, a fine dining café, padel and pickle coaching.</p>
     <div class="hero-cta">
       <a href="#contact" class="btn btn-primary">Book a Court</a>
       <a href="#membership" class="btn btn-outline">Memberships</a>
@@ -940,8 +1132,8 @@
 </section>
 
 <!-- STATS -->
-<div class="stats">
-  <div class="stat">
+<div class="stats marquee">
+  <!--<div class="stat">
     <div class="stat-num">3</div>
     <div class="stat-label">Padel Courts</div>
   </div>
@@ -956,13 +1148,29 @@
   <div class="stat">
     <div class="stat-num">7</div>
     <div class="stat-label">Days a Week</div>
-  </div>
+  </div>-->
+  <ul class="marquee__content">
+    <li>3 Padel Courts</li>
+    <li>3 Pickelball Courts</li>
+    <li>95 Current Members</li>
+    <li>Open 7 Days</li>
+  </ul>
+  <!-- Mirrors the content above -->
+  <ul class="marquee__content" aria-hidden="true">
+    <li>3 Padel Courts</li>
+    <li>3 Pickelball Courts</li>
+    <li>95 Current Members</li>
+    <li>Open 7 Days</li>
+  </ul>
 </div>
 
 <!-- COURTS -->
 <section class="courts" id="courts">
   <p class="section-label">Facilities</p>
-  <h2 class="section-title">World-Class<br>Courts</h2>
+  <div style="display:flex; justify-content:space-between;">
+  <h2 class="section-title">Elite Level<br>Indoor Courts</h2>
+  <p class="court-desc-top" style="width:40%;">Our world-class indoor padel court facilities deliver a premium playing experience in every detail. Featuring state-of-the-art panoramic courts, professional-grade turf, climate-controlled comfort, and championship lighting, we ensure peak performance year-round. Enjoy spacious lounges, modern changing rooms, expert coaching, and a vibrant community atmosphere designed for players of all levels.</p>
+  </div>
   <div class="courts-grid">
     <div class="court-card">
       <div class="court-number">01</div>
@@ -994,7 +1202,10 @@
 <!-- MEMBERSHIP -->
 <section class="membership" id="membership">
   <p class="section-label">Join the Club</p>
+  <div class="member-about">
   <h2 class="section-title">Membership<br>Plans</h2>
+  <p class="court-desc member">Our flexible membership plans are designed to suit every player. Choose Casual for single one-hour court bookings, Standard for regular play with exclusive perks, or Elite for premium benefits, priority reservations, and special events access. Whatever your level, we offer unmatched value, flexibility, and rewards for every stage of play.</p>
+  </div>
   <div class="plans-grid">
     <div class="plan">
       <div class="plan-wrap">
@@ -1047,9 +1258,10 @@
 <section class="about" id="about">
   <div class="about-content">
     <p class="section-label">Our Story</p>
-    <h2 class="section-title">Padel for<br>Everyone</h2>
-    <p class="about-text">Play was founded by a group of Winchester locals who fell in love with padel on a trip to Spain. We brought the sport home — and built something truly special in the heart of Hampshire.</p>
-    <p class="about-text">Whether you're picking up a racket for the first time or competing at a regional level, our coaches, community, and courts are here for you. All abilities, all ages, all welcome.</p>
+    <h2 class="section-title">Why Play?</h2>
+    <p class="about-text body">Play is not just a padel and pickleball club, but an indoor sporting brand taking over the UK. Play is about human connection, experiences, and playfulness. As human connection is becoming more important now than ever before, we are on a mission to create a place where people come to meet and make new friends, stay fit, and create experiences.<br><br>
+    Whether you're picking up a racket for the first time or competing at a regional level, our coaches, community, and courts are here for you. All abilities, all ages, all welcome.<br><br>
+    If you're bored, need to get-out when it's raining, looking for a human connection, or just want to get off your phone, come and play!
     <div style="margin-top:2.5rem;">
       <a href="#contact" class="btn btn-primary">Book a Taster Session</a>
     </div>
@@ -1064,36 +1276,83 @@
   </div>
 </section>
 
-<!-- LOCATION -->
-<section class="location" id="location">
-  <p class="section-label">Find Us</p>
-  <h2 class="section-title">We're in<br>Winchester</h2>
-  <p class="location-address">
-    Play Padel Club<br>
-    Winchester<br>
-    Location Coming Soon<br><br>
-    Open daily 7am – 10pm
-  </p>
-  <div class="location-map">
-    <div class="map-placeholder">
-      <div class="gmap_canvas">
-        <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Winchester&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+<!-- APPAREL -->
+<section id="apparel">
+  <div class="apparel-text">
+    <div>
+    <p class="section-label">The Play Brand</p>
+    <h2 class="section-title" style="margin-bottom: 4rem;">Apparel</h2>
+    </div>
+    <p class="body">Performance-driven apparel designed for movement, comfort, and unmistakable style, seamlessly blending sport and culture to empower the next generation of athletes. Crafted to support high-intensity indoor play while expressing individuality, it fosters confidence, builds community, and represents a bold, inclusive future for modern sport and youth culture.</p>
+  </div>  
+    <div class="about">
+      <div class="apparel-box-1">
+      </div>
+      <div class="apparel-box-2">
       </div>
     </div>
-  </div>
 </section>
+
+<!-- INVESTORS -->
+ <section id="investors">
+      <div class="investor-contact">
+      <div>
+        <p class="section-label">Become A Shareholder</p>
+        <h2 class="section-title" style="margin-bottom: 2rem;">We Are Raising</h2>
+        <p class="body">We are currently raising our seed round to launch an ambitious new indoor sporting brand in the UK, built around community, connection, and high-quality experiences. Our mission is simple: to create a welcoming space where people come to meet, make new friends, stay fit, and build lasting memories. By combining the fast-growing sports of padel and pickleball with a vibrant social atmosphere, we are redefining what a modern sports club can be.<br><br>
+        Our first flagship club will open in Winchester, bringing premium indoor courts, expertly delivered programming, and a carefully designed social environment under one roof. We see strong demand for accessible, social fitness experiences that go beyond traditional gyms. With early momentum building and a clear expansion roadmap, this seed round will fund site launch, brand development, and operational setup—positioning us to scale a community-driven sporting concept across the UK.</p>
+        <p class="section-label investor-label">Fill Out The Investor Form To Get In Touch <span class="arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg></span></p>
+      </div>
+      <div>
+        <form class="contact-form" onsubmit="return false;">
+        <input type="text" placeholder="Your Name" />
+        <input type="email" placeholder="Email Address" />
+        <input type="tel" placeholder="Phone (optional)" />
+        <textarea placeholder="Message"></textarea>
+        <button type="submit" class="btn">Send Message</button>
+        </form>
+      </div>
+    </div>
+</section>
+
+<!-- LOCATION -->
+
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
-  <p class="section-label">Get in Touch</p>
-  <h2 class="section-title">Book a Court<br>or Drop Us a Line</h2>
-  <form class="contact-form" onsubmit="return false;">
-    <input type="text" placeholder="Your Name" />
-    <input type="email" placeholder="Email Address" />
-    <input type="tel" placeholder="Phone (optional)" />
-    <textarea placeholder="Tell us what you need — court booking, membership query, coaching…"></textarea>
-    <button type="submit" class="btn">Send Message</button>
-  </form>
+  <div class="register box">
+    <p class="section-label">Become A Member</p>
+    <h2 class="section-title">Register<br>Your Interest</h2>
+    <form class="contact-form" onsubmit="return false;">
+      <input type="text" placeholder="Your Name" />
+      <input type="email" placeholder="Email Address" />
+      <input type="tel" placeholder="Phone (optional)" />
+      <textarea placeholder="Tell us what you need — court booking, membership query, coaching…"></textarea>
+      <button type="submit" class="btn">Send Message</button>
+    </form>
+  </div>
+  <div class="location">
+    <div class="box">
+      <p class="section-label">Find Us</p>
+      <p class="location-address">
+        Play<br>
+        Winchester<br><br>
+        Location Coming Soon<br>
+        Open daily 7am – 10pm<br><br>
+        Contact:<br>
+        <a>general@play-club.co.uk</a>
+      </p>
+    </div>
+    <div class="location-map">
+      <div class="map-placeholder">
+        <div class="gmap_canvas">
+          <iframe class="gmap_iframe" width="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=Winchester&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- FOOTER -->
@@ -1101,13 +1360,13 @@
   <ul class="footer-links">
     <li><a href="#courts">Courts</a></li>
     <li><a href="#membership">Membership</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#about">Why Play?</a></li>
+    <li><a href="#contact">Investors</a></li>
   </ul>
   <div class="footer-logo" style="justify-self: center;">
     <img src="images/ppc-icon.png" width="40" />
   </div>
-  <p class="footer-copy" style="justify-self: flex-end;">© 2026 Play Padel Club, Winchester</p>
+  <p class="footer-copy" style="justify-self: flex-end;">© 2026 Play Sports & Apparel UK</p>
 </footer>
 
 <script>
