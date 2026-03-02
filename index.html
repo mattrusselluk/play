@@ -168,7 +168,7 @@
 
     .hero-headline {
       font-family: var(--heading);
-      font-size: clamp(8rem, 9vw, 9rem);
+      font-size: clamp(6rem, 9vw, 9rem);
       line-height: 0.79;
       color: var(--white);
       opacity: 0;
@@ -420,6 +420,7 @@
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: -4px;
+      hyphens: auto;
     }
 
     /* ── COURTS ── */
@@ -739,6 +740,10 @@
       gap:5rem;
     }
 
+    .apparel-text .section-title {
+      margin-bottom: 4rem;
+    }
+
     /* -- INVESTORS -- */
     .investor-contact {
       display: grid;
@@ -1012,6 +1017,10 @@
         opacity: 0.9;
       }
 
+      .hero-sub {
+        line-height: 1.5;
+      }
+
       .hero-cta {
         display: grid;
       }
@@ -1038,13 +1047,27 @@
         display: none;
       }
 
+      #membership .section-title {
+        hyphens: auto;
+      }
+
       .apparel-text {
         grid-template-columns: 1fr;
-      } 
-
-      .apparel-text .body {
-        display: none;
+        gap: 0;
+        margin-bottom: 3rem;
       }
+
+      .apparel-text .section-title {
+        margin-bottom: 2rem;
+     } 
+
+     #apparel .about {
+      grid-template-rows: 400px 400px;
+     }
+
+     .apparel-box-1, .apparel-box-2 {
+      height: 100%;
+     }
 
       .plans-grid, .investor-contact, .contact {
         grid-template-columns: 1fr;
@@ -1054,12 +1077,21 @@
         gap: 1.5rem;
       }
 
+      .box {
+        padding: 1.5rem;
+      }
+
       .investor-contact {
         gap: 3rem;
       }
 
+      .location-address {
+        column-count: 1;
+      }
+
       .arrow svg {
         transform: rotate(90deg);
+        top: 0;
       }
 
       footer { 
@@ -1281,7 +1313,7 @@
   <div class="apparel-text">
     <div>
     <p class="section-label">The Play Brand</p>
-    <h2 class="section-title" style="margin-bottom: 4rem;">Apparel</h2>
+    <h2 class="section-title">Apparel</h2>
     </div>
     <p class="body">Performance-driven apparel designed for movement, comfort, and unmistakable style, seamlessly blending sport and culture to empower the next generation of athletes. Crafted to support high-intensity indoor play while expressing individuality, it fosters confidence, builds community, and represents a bold, inclusive future for modern sport and youth culture.</p>
   </div>  
