@@ -420,7 +420,6 @@
       font-weight: 500;
       text-transform: uppercase;
       letter-spacing: -4px;
-      hyphens: auto;
     }
 
     /* ── COURTS ── */
@@ -527,8 +526,12 @@
       gap: 1.5rem;
     }
 
+    #member .section-title {
+      grid-column-start: 1;
+      grid-column-end: 3;
+    }
+
     .member {
-      grid-column-start: 3;
       margin: 0;
     }
 
@@ -1049,6 +1052,15 @@
 
       #membership .section-title {
         hyphens: auto;
+      }
+
+      .member-about {
+        grid-template-columns: 1fr;
+      }
+
+      #member .section-title {
+        grid-column-start: unset;
+        grid-column-end: unset;
       }
 
       .apparel-text {
