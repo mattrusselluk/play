@@ -168,7 +168,7 @@
 
     .hero-headline {
       font-family: var(--heading);
-      font-size: clamp(6rem, 9vw, 9rem);
+      font-size: clamp(6rem, 7vw, 9rem);
       line-height: 0.79;
       color: var(--white);
       opacity: 0;
@@ -557,7 +557,7 @@
     }
 
     .plan:hover:not(.featured) { 
-      border-color: rgba(184,224,74,0.4); 
+      border-color: var(--green);
       transform: translateY(-4px);
     }
 
@@ -637,7 +637,7 @@
     }
 
     .plan.featured .plan-cta:hover { 
-      background: black;
+      background: #222;
     }
 
     /* ── ABOUT ── */
@@ -684,7 +684,7 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      background-image: url('images/about-4.jpeg');
+      background-image: url('images/about-4.jpg');
       background-size: cover;
       background-position: center;
     }
@@ -750,14 +750,15 @@
     /* -- INVESTORS -- */
     .investor-contact {
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.5fr 1fr;
       gap: 5rem;
     }
 
     #investors form {
       margin: 0;
-      justify-content: space-between;
       height: 100%;
+      display: grid;
+      grid-template-columns: 1fr;
     }
 
     #investors .contact-form input, #investors input::placeholder, #investors textarea::placeholder, #investors textarea {
@@ -790,6 +791,7 @@
       grid-template-columns: 1fr;
       gap: 5rem;
       color: var(--blue);
+      grid-template-rows: 1fr auto;
     }
 
     .location .box {
@@ -899,9 +901,12 @@
       color: var(--green);
       padding: 1rem 3rem;
       width: 100%;
+      border: 1px solid var(--green-dark);
     }
 
-    .contact-form .btn:hover { background: #222; }
+    .contact-form .btn:hover { 
+      background: #222;
+    }
 
     .box {
       padding: 2.5rem;
@@ -1142,7 +1147,7 @@
     <li><a href="#membership">Membership</a></li>
     <li><a href="#about">Why Play?</a></li>
     <li><a href="#contact">Investors</a></li>
-    <li><a id="nav-cta" href="#contact">Contact Us</a></li>
+    <li><a id="nav-cta" href="#contact">Register</a></li>
   </ul>
 </nav>
 
@@ -1340,7 +1345,7 @@
       <div>
         <p class="section-label">Become A Shareholder</p>
         <h2 class="section-title" style="margin-bottom: 2rem;">We Are Raising</h2>
-        <p class="body">We are currently raising our seed round to launch an ambitious new indoor sporting brand in the UK, built around community, connection, and high-quality experiences. Our mission is simple: to create a welcoming space where people come to meet, make new friends, stay fit, and build lasting memories. By combining the fast-growing sports of padel and pickleball with a vibrant social atmosphere, we are redefining what a modern sports club can be.<br><br>
+        <p class="body">We are currently raising our seed round to launch our ambitious new indoor sporting brand in the UK, built around community, connection, and high-quality experiences. Our mission is simple: to create a welcoming space where people come to meet, make new friends, stay fit, and build lasting memories. By combining the fast-growing sports of padel and pickleball with a vibrant social atmosphere, we are redefining what a modern sports club can be.<br><br>
         Our first flagship club will open in Winchester, bringing premium indoor courts, expertly delivered programming, and a carefully designed social environment under one roof. We see strong demand for accessible, social fitness experiences that go beyond traditional gyms. With early momentum building and a clear expansion roadmap, this seed round will fund site launch, brand development, and operational setup—positioning us to scale a community-driven sporting concept across the UK.</p>
         <p class="section-label investor-label">Fill Out The Investor Form To Get In Touch <span class="arrow"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
