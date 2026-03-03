@@ -912,7 +912,7 @@
     }
 
     .register.box {
-      border: 1px solid var(--blue);
+      border: 1px solid rgba(47, 51, 57, 0.44);
       display: grid;
     }
 
@@ -1023,6 +1023,10 @@
       padding: 0; 
     }
 
+    .btn {
+      text-align: center;
+    }
+
       .hero { 
         grid-template-columns: 1fr; 
         border-radius: 50px 50px 0 0;
@@ -1033,6 +1037,10 @@
       .hero-right {
         width: 100%;
         opacity: 0.9;
+      }
+
+       .hero-headline {
+        font-size: 12.5vh;
       }
 
       .hero-sub {
@@ -1065,8 +1073,12 @@
         display: none;
       }
 
-      .member-about .section-title {
+      .section-title {
         hyphens: auto;
+        word-break: break-word;
+      }
+
+      .member-about .section-title {
         grid-column-start: unset;
         grid-column-end: unset;
       }
@@ -1101,8 +1113,12 @@
         gap: 1.5rem;
       }
 
-      .box {
-        padding: 1.5rem;
+      .contact .section-title {
+        font-size: 4rem;
+      }
+
+      .box, .plan {
+        padding: 2rem;
       }
 
       .investor-contact {
