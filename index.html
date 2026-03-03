@@ -138,12 +138,13 @@
 
     /* ── HERO ── */
     .hero {
-      height: 100vh;
+      min-height: 100vh;
       display: grid;
       grid-template-columns: 1fr 1fr;
       position: relative;
       overflow: hidden;
-      background: color(srgb 0.0765 0.18 0.1615);
+      background: var(--green-dark);
+      padding-top: 125px;
     }
 
     .hero-left {
@@ -168,7 +169,7 @@
 
     .hero-headline {
       font-family: var(--heading);
-      font-size: clamp(6rem, 7vw, 9rem);
+      font-size: 16.5vh;
       line-height: 0.79;
       color: var(--white);
       opacity: 0;
@@ -193,7 +194,7 @@
     }
 
     .hero-cta {
-      margin-top: 3rem;
+      margin-top: 2rem;
       display: flex;
       gap: 1rem;
       opacity: 0;
@@ -741,9 +742,6 @@
       display: grid; 
       grid-template-columns: 1fr 1fr; 
       gap:5rem;
-    }
-
-    .apparel-text .section-title {
       margin-bottom: 4rem;
     }
 
@@ -803,7 +801,6 @@
       font-size: 1.1rem;
       color: var(--blue);
       line-height: 1.5;
-      column-count: 2;
       text-align: left;
     }
 
@@ -852,7 +849,7 @@
       color: var(--black);
       text-align: center;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: 1.5fr 1fr;
       gap: 5rem;
       overflow: hidden;
     }
@@ -871,6 +868,7 @@
       display: flex;
       flex-direction: column;
       gap: 1rem;
+      justify-content: space-between;
     }
 
     .contact-form input,
@@ -915,6 +913,18 @@
 
     .register.box {
       border: 1px solid var(--blue);
+      display: grid;
+    }
+
+    .register .body {
+      margin: 2rem 0 0;
+      text-align: left;
+      color: rgba(47, 51, 57, 0.57);
+    }
+
+    .register form {
+      display: grid;
+      grid-template-columns: 1fr;
     }
 
     /* ── FOOTER ── */
@@ -1146,7 +1156,7 @@
     <li><a href="#courts">Courts</a></li>
     <li><a href="#membership">Membership</a></li>
     <li><a href="#about">Why Play?</a></li>
-    <li><a href="#contact">Investors</a></li>
+    <li><a href="#investors">Investors</a></li>
     <li><a id="nav-cta" href="#contact">Register</a></li>
   </ul>
 </nav>
@@ -1159,7 +1169,7 @@
     <h1 class="hero-headline">Match<br>Meet<br><span>Play.</span></h1>
     <p class="hero-sub">Winchester's finest padel experience. Elite level indoor courts, competitions for every level — beginner to elite, a fine dining café, padel and pickle coaching.</p>
     <div class="hero-cta">
-      <a href="#contact" class="btn btn-primary">Book a Court</a>
+      <a href="#contact" class="btn btn-primary">Register Now</a>
       <a href="#membership" class="btn btn-outline">Memberships</a>
     </div>
   </div>
@@ -1265,7 +1275,7 @@
         <li>No commitment</li>
       </ul>
       </div>
-      <a href="#contact" class="plan-cta">Book a court</a>
+      <a href="#contact" class="plan-cta">Register Now</a>
     </div>
     <div class="plan featured">
       <div class="plan-wrap">
@@ -1308,8 +1318,9 @@
     <p class="about-text body">Play is not just a padel and pickleball club, but an indoor sporting brand taking over the UK. Play is about human connection, experiences, and playfulness. As human connection is becoming more important now than ever before, we are on a mission to create a place where people come to meet and make new friends, stay fit, and create experiences.<br><br>
     Whether you're picking up a racket for the first time or competing at a regional level, our coaches, community, and courts are here for you. All abilities, all ages, all welcome.<br><br>
     If you're bored, need to get-out when it's raining, looking for a human connection, or just want to get off your phone, come and play!
-    <div style="margin-top:2.5rem;">
-      <a href="#contact" class="btn btn-primary">Book a Taster Session</a>
+    <div class="hero-cta">
+      <a href="#contact" class="btn btn-primary">Become A Member</a>
+      <a href="#investors" class="btn btn-outline">Buy Shares</a>
     </div>
   </div>
   <div class="about-visual">
@@ -1369,25 +1380,28 @@
 <!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="register box">
+    <div>
     <p class="section-label">Become A Member</p>
     <h2 class="section-title">Register<br>Your Interest</h2>
+    </div>
+    <p class="body">Join our exclusive early access list and be the first to experience our new padel club. Register today to secure priority booking, special founding member rates, and invitations to private opening events. Don’t miss your chance to lock in benefits before we open to the public. Spots are limited.</p>
     <form class="contact-form" onsubmit="return false;">
-      <input type="text" placeholder="Your Name" />
-      <input type="email" placeholder="Email Address" />
+      <input required type="text" placeholder="Your Name" />
+      <input required type="email" placeholder="Email Address" />
       <input type="tel" placeholder="Phone (optional)" />
-      <textarea placeholder="Tell us what you need — court booking, membership query, coaching…"></textarea>
-      <button type="submit" class="btn">Send Message</button>
+      <input type="text" placeholder="Age (optional)" />
+      <input type="text" placeholder="Post Code (optional)" />
+      <button type="submit" class="btn">Register Now</button>
     </form>
   </div>
   <div class="location">
     <div class="box">
       <p class="section-label">Find Us</p>
       <p class="location-address">
-        Play<br>
-        Winchester<br><br>
-        Location Coming Soon<br>
+        Play Winchester<br>
+        (Location Coming Soon)<br><br>
         Open daily 7am – 10pm<br><br>
-        Contact:<br>
+        Contact:<br> 
         <a>general@play-club.co.uk</a>
       </p>
     </div>
