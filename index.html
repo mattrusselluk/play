@@ -1384,19 +1384,16 @@
         </svg></span></p>
       </div>
       <div>
-        <form class="contact-form" onsubmit="return false;">
-        <input type="text" placeholder="Your Name" />
-        <input type="email" placeholder="Email Address" />
-        <input type="tel" placeholder="Phone (optional)" />
-        <textarea placeholder="Message"></textarea>
+        <form id="investor-form" class="contact-form" method="POST" action="/api/send-email">
+        <input id="name" name="name" type="text" type="text" placeholder="Your Name" required/>
+        <input id="email" name="email" type="email" placeholder="Email Address" required/>
+        <input id="phone" name="phone" type="tel" placeholder="Phone (optional)" />
+        <textarea id="message" name="message" placeholder="Message" required></textarea>
         <button type="submit" class="btn">Send Message</button>
         </form>
       </div>
     </div>
 </section>
-
-<!-- LOCATION -->
-
 
 <!-- CONTACT -->
 <section class="contact" id="contact">
@@ -1406,10 +1403,10 @@
     <h2 class="section-title">Register<br>Your Interest</h2>
     </div>
     <p class="body">Join our exclusive early access list and be the first to experience our new padel and pickleball club. Register today to secure priority booking, special founding member rates, and invitations to private opening events. Don’t miss your chance to lock in benefits before we open to the public. Spots are limited.</p>
-    <form class="contact-form" onsubmit="return false;">
-      <input required type="text" placeholder="Your Name" />
-      <input required type="email" placeholder="Email Address" />
-      <input type="tel" placeholder="Phone (optional)" />
+    <form id="member-form" class="contact-form" method="POST" action="/api/send-email">
+      <input id="name" name="name" type="text" placeholder="Your Name" required/>
+      <input id="email" name="email" type="email" placeholder="Email Address" required/>
+      <input id="phone" name="phone" type="tel" placeholder="Phone (optional)" />
       <input type="text" placeholder="Age (optional)" />
       <input type="text" placeholder="Post Code (optional)" />
       <button type="submit" class="btn">Register Now</button>
