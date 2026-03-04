@@ -1403,7 +1403,7 @@
         <path d="M4 12H20M20 12L14 6M20 12L14 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
         </svg></span></p>
       </div>
-      <div>
+      <div class="form-container">
         <form id="investor-form" class="contact-form" method="POST" action="/api/send-email">
         <input id="name" name="name" type="text" type="text" placeholder="Your Name" required/>
         <input id="email" name="email" type="email" placeholder="Email Address" required/>
@@ -1525,7 +1525,7 @@ document.getElementById('investor-form').addEventListener('submit', async functi
     });
 
     if (response.ok) {
-      document.getElementById('successMessage').style.display = 'block'; // Show success message
+      document.getElementById('successMessage').style.display = 'flex'; // Show success message
       document.getElementById('investor-form').style.display = 'none';
       this.reset(); // Reset the form
     } else {
