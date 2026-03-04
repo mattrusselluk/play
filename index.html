@@ -782,6 +782,26 @@
       top: -4px;
     }
 
+    #successMessage {
+      display: none;
+      color: var(--blue);
+      padding: 2rem;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 10px;
+      height: 100%;
+      background: var(--green);
+    }
+
+     #successMessage p {
+      font-size: 1.1rem;
+      line-height: 1.5;
+     }
+
+    #successMessage-member {
+      display: none;
+    }
+
     /* ── LOCATION ── */
     .location {
       background: var(--mid);
@@ -1391,6 +1411,10 @@
         <textarea id="message" name="message" placeholder="Message" required></textarea>
         <button type="submit" class="btn">Send Message</button>
         </form>
+        <div id="successMessage">
+          <h2 class="section-title">Success</h2>
+          <p>Thank you, we have received your details and will get back to you shortly.</p>
+        </div>
       </div>
     </div>
 </section>
@@ -1411,6 +1435,10 @@
       <input type="text" placeholder="Post Code (optional)" />
       <button type="submit" class="btn">Register Now</button>
     </form>
+    <div id="successMessage-member">
+      <h2 class="section-title">Success</h2>
+      <p>Thank you for registering. You will receive a confirmation email shortly.</p>
+    </div>
   </div>
   <div class="location">
     <div class="box">
@@ -1478,6 +1506,36 @@ window.addEventListener("scroll", () => {
       toggleBtn.classList.remove('rotate');
     });
   });
+</script>
+
+<script>
+document.getElementById('investor-form').addEventListener('submit', async function(event) {
+  event.preventDefault(); // Prevent default form submission
+
+  const formData = new FormData(this);
+  const data = Object.fromEntries(formData);
+
+  try {
+    const response = await fetch('/api/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    if (response.ok) {
+      document.getElementById('successMessage').style.display = 'block'; // Show success message
+      document.getElementById('investor-form').style.display = 'none';
+      this.reset(); // Reset the form
+    } else {
+      throw new Error('Failed to send the message');
+    }
+  } catch (error) {
+    console.error(error);
+    alert('There was an error sending your message. Please try again.');
+  }
+});
 </script>
 
 </body>
